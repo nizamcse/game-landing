@@ -1,0 +1,14 @@
+.link {
+  margin: 0;
+  padding: 8px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.linkActive {
+  background-color: #8dc63f;
+  color: #fcfcfc;
+}

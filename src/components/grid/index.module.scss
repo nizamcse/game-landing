@@ -1,0 +1,81 @@
+$breakpoints: (
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1536px,
+);
+
+$justifyContent: (flex-start, flex-end, center, space-between);
+$alignItems: (flex-start, flex-end, center);
+
+@mixin breakpoint($name) {
+  @media screen and (min-width: map-get($breakpoints, $name )) {
+    @content;
+  }
+}
+.Grid {
+  &_container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  &_item {
+    box-sizing: border-box;
+  }
+  @for $i from 1 through 12 {
+    &_xs_#{$i} {
+      width: $i/12 * 100%;
+    }
+  }
+  @include breakpoint("sm") {
+    @for $i from 1 to 13 {
+      &_sm_#{$i} {
+        width: $i/12 * 100%;
+      }
+    }
+  }
+
+  @include breakpoint("md") {
+    @for $i from 1 to 13 {
+      &_md_#{$i} {
+        width: $i/12 * 100%;
+      }
+    }
+  }
+
+  @include breakpoint("lg") {
+    @for $i from 1 to 13 {
+      &_lg_#{$i} {
+        width: $i/12 * 100%;
+      }
+    }
+  }
+
+  @include breakpoint("xl") {
+    @for $i from 1 to 13 {
+      &_lg_#{$i} {
+        width: $i/12 * 100%;
+      }
+    }
+  }
+  @for $i from 1 through 8 {
+    &_spacing_#{$i} {
+      margin: -$i * 8px;
+    }
+    &_spacing_#{$i} > &_item {
+      padding: $i * 8px;
+    }
+  }
+
+  @each $value in $justifyContent {
+    &_justifyContent_#{$value} {
+      justify-content: $value;
+    }
+  }
+
+  @each $value in $alignItems {
+    &_alignItems_#{$value} {
+      align-items: $value;
+    }
+  }
+}

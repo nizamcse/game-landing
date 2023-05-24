@@ -1,0 +1,39 @@
+$breakpoints: (
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1536px,
+);
+
+$justifyContent: (flex-start, flex-end, center, space-between);
+$alignItems: (flex-start, flex-end, center);
+
+@mixin breakpoint($name) {
+  @media screen and (min-width: map-get($breakpoints, $name )) {
+    @content;
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  @include breakpoint("sm") {
+    &_sm {
+      max-width: 720px;
+    }
+  }
+  @include breakpoint("md") {
+    &_md {
+      max-width: 960px;
+    }
+  }
+  @include breakpoint("lg") {
+    &_lg {
+      max-width: 1140px;
+    }
+  }
+  @include breakpoint("xl") {
+    &_xl {
+      max-width: 1320px;
+    }
+  }
+}

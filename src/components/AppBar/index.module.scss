@@ -1,0 +1,27 @@
+.appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+  background-color: #373737;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.linkActive {
+  background-color: #8dc63f;
+  color: #fcfcfc;
+}
+
+// Active #8dc63f
+// Active Text #FCFCFC

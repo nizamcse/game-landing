@@ -1,0 +1,19 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  &_description {
+    transform: translateY(100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+    transition: all 450ms ease-in-out;
+  }
+  &:hover {
+    .card_description {
+      transform: translateY(0);
+    }
+  }
+}
